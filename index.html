@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savoria | Restaurant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#home">Savor<span>ia</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">🛒 <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">FRESH • FAST • FLAVORFUL</p>
+        <h1>Good food.<br><em>Great moments.</em></h1>
+        <p class="hero-text">Handcrafted dishes made with fresh ingredients, bold flavors, and a little love.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#menu">Explore Menu →</a>
+          <a class="secondary-btn" href="#contact">Book a Table</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4.9★</strong><span>Customer rating</span></div>
+          <div><strong>25+</strong><span>Signature dishes</span></div>
+          <div><strong>15 min</strong><span>Avg. preparation</span></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="food-orb">🍕</div>
+        <div class="floating-card">
+          <span>🔥</span>
+          <div><strong>Chef's Pick</strong><small>Truffle Margherita</small></div>
+          <b>₹399</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR MENU</p>
+          <h2>Made to make you hungry.</h2>
+        </div>
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Search dishes...">
+          <span>⌕</span>
+        </div>
+      </div>
+
+      <div class="categories" id="categories">
+        <button class="active" data-category="All">All</button>
+        <button data-category="Pizza">Pizza</button>
+        <button data-category="Burger">Burgers</button>
+        <button data-category="Pasta">Pasta</button>
+        <button data-category="Asian">Asian</button>
+        <button data-category="Dessert">Desserts</button>
+        <button data-category="Drinks">Drinks</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid"></div>
+      <p class="empty-state" id="emptyState">No dishes found. Try another search.</p>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-image"><span>👨‍🍳</span></div>
+      <div>
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Simple ingredients.<br>Unforgettable taste.</h2>
+        <p>At Savoria, we believe great food doesn't need to be complicated. Our chefs turn quality ingredients into comforting classics and exciting new flavors.</p>
+        <div class="feature-row">
+          <div><span>🥬</span><strong>Fresh daily</strong><small>Locally sourced ingredients</small></div>
+          <div><span>⚡</span><strong>Quick service</strong><small>Made fresh when ordered</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">COME SAY HELLO</p>
+      <h2>Let's make it a delicious one.</h2>
+      <div class="contact-grid">
+        <div><span>📍</span><div><strong>Visit us</strong><p>42 Food Street, New Delhi</p></div></div>
+        <div><span>🕐</span><div><strong>Opening hours</strong><p>11:00 AM – 11:00 PM</p></div></div>
+        <div><span>📞</span><div><strong>Call us</strong><p>+91 98765 43210</p></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Savoria. Crafted with flavor.</footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header"><h2>Your Order</h2><button id="closeCart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div><span>Subtotal</span><strong id="subtotal">₹0</strong></div>
+      <div><span>Delivery</span><strong id="delivery">₹0</strong></div>
+      <div class="total"><span>Total</span><strong id="total">₹0</strong></div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">×</button>
+      <p class="eyebrow">CHECKOUT</p>
+      <h2>Complete your order</h2>
+      <form id="checkoutForm">
+        <input required placeholder="Full name">
+        <input required type="tel" placeholder="Phone number">
+        <textarea required placeholder="Delivery address"></textarea>
+        <select required>
+          <option value="">Payment method</option>
+          <option>Cash on Delivery</option>
+          <option>UPI</option>
+          <option>Card</option>
+        </select>
+        <button class="checkout-btn" type="submit">Place Order</button>
+      </form>
+      <p class="success" id="successMsg">🎉 Order placed successfully!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
